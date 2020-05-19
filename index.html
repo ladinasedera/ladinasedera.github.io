@@ -14,340 +14,92 @@
     <link rel="icon" type="image/png" href="https://static.fitiavana.mg/images/me.png">
     <title>Ladina Sedera {} Développeur Web Full Stack || Freelance</title>   
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;500;523&family=Montserrat:wght@500&display=swap" rel="stylesheet">
-  <style>
-    body {
-        font-family: 'Manrope', sans-serif;
-        font-family: 'Montserrat', sans-serif;
-        font-size: calc(10px + 0.33vw);
-        -webkit-font-smoothing: antialiased;
-        padding: 1vh 5vw;
-        color: #121314;
-        background-color: #fff;
-        -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
-       -moz-animation: fadein 2s; /* Firefox < 16 */
-        -ms-animation: fadein 2s; /* Internet Explorer */
-         -o-animation: fadein 2s; /* Opera < 12.1 */
-        animation: fadein 2s;
-    }
-    h1 {
-      font-size: 4em;
-      font-weight: 500;
-      margin-bottom: 0;
-    }
-    h2 {
-      font-size: 2.5em;
-      font-weight: 500;
-      text-transform:capitalize;
-    }
-    p {
-      font-size: 1.6em;
-      font-weight: 300;
-      line-height: 2;
-    }
-    span,strong {
-        line-height: 2.5rem;
-    }
-    a {
-      text-decoration: none;
-      color: #121314;
-      position: relative;
-      font-weight: bolder;
-    }
-    a:after {
-      content: "";
-      position: absolute;
-      z-index: -1;
-      top: 91%;
-      left: -0.1em;
-      right: -0.1em;
-      bottom: 0;
-      transition: top .2s cubic-bezier(0, .8, .13, 1);
-      background-color: #44bab4;
-    }
-    a:hover:after {
-      top: 0%;
-    }
-    ul > li {
-        list-style-type: none;
-    }
-    .contact {
-        margin-left: -28px;
-        margin-top: -20px;
-    }
-    .short-border-bottom {
-        border-bottom: 6px solid #238cd1;
-        width: 100px;
-        padding: 0;
-        margin: -26px 0px 20px 0px;
-        border-radius: 20px;
-    }
-    .p {
-        margin-left: 2rem;
-    }
-    .is-green {
-        color:#44bab4;
-    }
-    .is-blue {
-        color: #238cd1;
-    }
-    .quote {
-        border-left: 6px solid #44bab4;
-        padding-left: 1rem;
-        font-style: italic;
-        font-weight: 600;
-    }
-    .typewriter {
-        overflow: hidden; /* Ensures the content is not revealed until the animation */
-        border-right: .15em solid #44bab4; /* The typwriter cursor */
-        white-space: nowrap; /* Keeps the content on a single line */
-        margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-        letter-spacing: .15em; /* Adjust as needed */
-        -webkit-animation:  typing 3.5s steps(40, end),
-        blink-caret .75s step-end infinite; /* Safari, Chrome and Opera > 12.1 */
-       -moz-animation:  typing 3.5s steps(40, end),
-        blink-caret .75s step-end infinite; /* Firefox < 16 */
-        -ms-animation:  typing 3.5s steps(40, end),
-        blink-caret .75s step-end infinite; /* Internet Explorer */
-        -o-animation:  typing 3.5s steps(40, end),
-        blink-caret .75s step-end infinite; /* Opera < 12.1 */
-            animation:  typing 3.5s steps(40, end),
-        blink-caret .75s step-end infinite;
-    }
-    .underlined {
-        text-decoration: underline;
-    }
-    .text-center {
-        text-align: center!important;
-    }
-    .is-uppercase {
-        text-transform: uppercase;
-    }
-    .is-capitalize {
-        text-transform: capitalize;
-    }
-    /* The typing effect */
-    @keyframes typing {
-      from { width: 0 }
-      to { width: 100% }
-    }
-
-    @-moz-keyframes typing {
-      from { width: 0 }
-      to { width: 100% }
-    } 
-
-    @-webkit-keyframes  typing {
-      from { width: 0 }
-      to { width: 100% }
-    } 
-
-    @-ms-keyframes typing {
-      from { width: 0 }
-      to { width: 100% }
-    }
-
-    @-o-keyframes typing {
-      from { width: 0 }
-      to { width: 100% }
-    }
-
-    /* The typewriter cursor effect */
-    @keyframes blink-caret {
-      from, to { border-color: transparent }
-      50% { border-color: #44bab4; }
-    }
-
-    @-moz-keyframes blink-caret {
-      from, to { border-color: transparent }
-      50% { border-color: #44bab4; }
-    } 
-
-    @-webkit-keyframes  blink-caret {
-      from, to { border-color: transparent }
-      50% { border-color: #44bab4; }
-    } 
-
-    @-ms-keyframes blink-caret {
-      from, to { border-color: transparent }
-      50% { border-color: #44bab4; }
-    }
-
-    @-o-keyframes blink-caret {
-      from, to { border-color: transparent }
-      50% { border-color: #44bab4; }
-    }
-
-    @keyframes fadein {
-        from { opacity: 0; }
-        to   { opacity: 1; }
-    }
-
-    /* Firefox < 16 */
-    @-moz-keyframes fadein {
-        from { opacity: 0; }
-        to   { opacity: 1; }
-    }
-
-    /* Safari, Chrome and Opera > 12.1 */
-    @-webkit-keyframes fadein {
-        from { opacity: 0; }
-        to   { opacity: 1; }
-    }
-
-    /* Internet Explorer */
-    @-ms-keyframes fadein {
-        from { opacity: 0; }
-        to   { opacity: 1; }
-    }
-
-    /* Opera < 12.1 */
-    @-o-keyframes fadein {
-        from { opacity: 0; }
-        to   { opacity: 1; }
-    }
-  </style>
+    <link rel="stylesheet" type="text/css" href="./assets/css/app.css?v=d">
 </head>
 <body>
 
-    <h1>Bonjour,</h1>
-    <p>   
-        <strong style="line-height: 2.5rem">Mon nom c'est 
-            <span class="is-blue"> 
-                Ladina Sedera
-            </span>,
-        </strong><br>
-        <span class="p is-green">
-            &rrarr; Père de deux enfants, Fondateur de <a href="https://fitiavana.mg" target="_blank">FITIAVANA-MG</a> et Développeur web Full Stack.
-        </span> 
-    </p>
-    <h2>A propos</h2>
-    <div class="short-border-bottom"></div>
-    <p>
-        Je suis quelqu'un de passionné par le développement web.
-        <br>
-        <a href="https://www.php.net" target="_blank">PHP</a> et <a href="https://developer.mozilla.org/fr/docs/Web/JavaScript" target="_blank">JavaScript</a> (principalement <a href="https://laravel.com/" target="_blank"a>Laravel</a>, <a href="https://vuejs.org" target="_blank">vueJS</a> et <a href="https://jquery.com/" target="_blank">jQuery</a>) sont ma passion.        
-    </p>
-    <p>
-        Après avoir travailler avec quelques société locale,<br>
-        <span class="underlined">j'étais en freelance</span> depuis quelques années, en tant que Développeur Web Full Stack!
-    </p>
-    <h2 class="text-">Ma motivation</h2>
-    <div class="short-border-bottom"></div>
-    <!-- <div class="short-border-bottom-center">
+    <div id="ladina-resume">
+        <div class="menu">
+            <a href="javascript:;" @click="setLocale('fr')" class="menu-link" :class="{'is-active':i18n.locale == 'fr'}">FR</a>
+            <a href="javascript:;" @click="setLocale('en')" class="menu-link" :class="{'is-active':i18n.locale == 'en'}">EN</a>
+        </div>
+        <h1>{{ $t("message.hello") }}</h1>
+        <p> 
+            <strong style="line-height: 2.5rem">
+
+                {{ $t('message.my-name-is') }} 
+                <span class="is-blue"> 
+                    {{ $t('message.ladina-sedera') }}
+                </span>,
+            </strong><br>
+            <span class="p is-green">
+                &rrarr; <span v-html="$t('message.ladina-resume')"></span>
+            </span> 
+        </p>
+        <h2> {{ $t('message.about-me-title') }} </h2>
         <div class="short-border-bottom"></div>
-    </div> -->
-    <p>
-        <span>M<sup>r</sup> Steve Jobs</span> à dit : 
-        <br>
-        <quote class="quote">
-            The only way to do a great work is to love what you do...
-        </quote>
-    </p>
-    <p>
-        Bien sûr, <span class="underlined">j'aime mon travail</span> et je pense que c'est pour cela que <span class="underlined">les gens l'adore</span>!
-    </p>
+        <p>
+            <span v-html="$t('message.passionate-for-web')"></span>
+            <br>
+            <a href="https://www.php.net" target="_blank">PHP</a> {{ $t('message.and') }} <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">JavaScript</a> ({{ $t('message.principalement') }} <a href="https://laravel.com/" target="_blank"a>Laravel</a>, <a href="https://vuejs.org" target="_blank">vueJS</a> {{ $t('message.and') }} <a href="https://jquery.com/" target="_blank">jQuery</a>) {{ $t('message.my-passion') }}       
+        </p>
+        <p>
+            {{ $t('message.my-cursus-locale') }} <br>
+            <span v-html="$t('message.i-am-freelancer')"></span>
+        </p>
+        <h2 class="text-">{{ $t('message.my-motivation') }}</h2>
+        <div class="short-border-bottom"></div>
+        <!-- <div class="short-border-bottom-center">
+            <div class="short-border-bottom"></div>
+        </div> -->
+        <p>
+            <span v-html="$t('message.mr-steve-jobs-said')"></span>
+            <br>
+            <quote class="quote">
+                The only way to do a great work is to love what you do...
+            </quote>
+        </p>
+        <p>
+            <span v-html="$t('message.i-love-my-job')"></span>
+        </p>
 
-    <!-- <span class="separator"></span>> -->
-    <h2>Pour conclure,</h2>
-    <div class="short-border-bottom"></div>
+        <!-- <span class="separator"></span>> -->
+        <h2> {{ $t('message.to-conclude') }} </h2>
+        <div class="short-border-bottom"></div>
 
-    <p>
-        Je peux vous assurer que <span class="underlined">vos projets seront bien réalises 
-         </span> grâce à l'expérience et surtout ma persévérance à tout moments.
-    </p>
+        <p>
+            <span v-html="$t('message.conclude')"></span>
+        </p>
 
-    <p>
-        <strong class="typewriter"> 
-            Atouts : 
-            <span class="typewrite is-green" data-period="50" data-type='[ "Avoir le sens de responsabilité", "Honnête", "Sociable", "Courageux" ]'>
-            </span>
-        </strong>
-    </p>
+        <p>
+            <strong> 
+                {{ $t('message.atouts') }} :
+                <span class="is-green" data-period="50">
+                    {{ $t('message.my-atouts') }}
+                </span> 
+            </strong>
+        </p>
 
-    <p>
-        A bientôt!<br />
-        Ladina Sedera ,
-        <br />
-        <ul class="contact">
-            <li>
-               &rrarr; Email &nbsp;&nbsp;: <a href="mailto:ladina.sedera@gmail.com" target="_top" class="text-white">ladina.sedera@gmail.com</a> / <a href="mailto:ladina@fitiavana.mg" target="_top" class="text-white">ladina@fitiavana.mg</a>
-            </li>   
-            <li>
-                &rrarr; Phone : <a href="tel:+261 34 11 104 72" class="text-white">+261 34 11 104 72</a>
-            </li>
-            <li>
-               &rrarr; Web &nbsp;&nbsp;&nbsp;&nbsp;: <a href="https://ladina.fitiavana.mg" class="text-white"> https://ladina.fitiavana.mg</a> / <a href="https://ladinasedera.github.io" class="text-white"> https://ladinasedera.github.io</a>
-            </li>
-        </ul>
-    </p>
-
-    <script type="text/javascript">
-        var TxtType = function (el, toRotate, period) {
-
-            this.toRotate = toRotate;
-            this.el = el;
-            this.loopNum = 0;
-            this.period = parseInt(period, 10) || 2000;
-            this.txt = '';
-            this.tick();
-            this.isDeleting = false;
-
-            console.log( this.period);
-        };
-
-        TxtType.prototype.tick = function() {
-
-            var i = this.loopNum % this.toRotate.length;
-            var fullTxt = this.toRotate[i];
-
-            if (this.isDeleting) 
-            {
-                this.txt = fullTxt.substring(0, this.txt.length - 1);
-            } 
-            else 
-            {
-                this.txt = fullTxt.substring(0, this.txt.length + 1);
-            }
-
-            this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
-
-            var self = this;
-            var delta = 200 - Math.random() * 100;
-
-            if (this.isDeleting) 
-            { 
-                delta /= 2; 
-            }
-
-            if (!this.isDeleting && this.txt === fullTxt) 
-            {
-                delta = this.period;
-                this.isDeleting = true;
-            } 
-            else if (this.isDeleting && this.txt === '') 
-            {
-                this.isDeleting = false;
-                this.loopNum++;
-                delta = 500;
-            }
-
-            setTimeout(function() {
-                self.tick();
-            }, delta);
-        };
-
-        window.onload = function() {
-
-            var elements = document.getElementsByClassName('typewrite');
-            for (var i=0; i<elements.length; i++) {
-                var toRotate = elements[i].getAttribute('data-type');
-                var period = elements[i].getAttribute('data-period');
-                if (toRotate) {
-                  new TxtType(elements[i], JSON.parse(toRotate), period);
-                }
-            }
-
-        };
-    </script>
+        <p>
+            {{ $t('message.see-you-soon') }} <br />
+            Ladina Sedera ,
+            <br />
+            <ul class="contact">
+                <li>
+                   &rrarr; Email &nbsp;&nbsp;: <a href="mailto:ladina.sedera@gmail.com" target="_top" class="text-white">ladina.sedera@gmail.com</a> / <a href="mailto:ladina@fitiavana.mg" target="_top" class="text-white">ladina@fitiavana.mg</a>
+                </li>   
+                <li>
+                    &rrarr; Phone : <a href="tel:+261 34 11 104 72" class="text-white">+261 34 11 104 72</a>
+                </li>
+                <li>
+                   &rrarr; Web &nbsp;&nbsp;&nbsp;&nbsp;: <a href="https://ladina.fitiavana.mg" class="text-white"> https://ladina.fitiavana.mg</a> / <a href="https://ladinasedera.github.io" class="text-white"> https://ladinasedera.github.io</a>
+                </li>
+            </ul>
+        </p>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-i18n/8.17.6/vue-i18n.min.js"></script>
+    <script type="text/javascript" src="./assets/js/app.js"></script>
 </body>
 </html>
