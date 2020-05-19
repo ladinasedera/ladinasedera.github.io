@@ -21,7 +21,7 @@ var messages  = {
             "to-conclude" : "To conclude",
             "conclude"    : "I can assure you that <span class='underlined'>your projects will be well realized</span>, with the experience and especially my perseverance at all times.",
             "atouts"       : "Qualities",
-            "my-atouts"    : "Have a sense of responsibility, Honest, Sociable, Courageous",
+            "my-atouts"    : "Have a sense of responsibility, Honesty, Sociability, Courage",
             "see-you-soon" : "See you soon!"
         } 
     },
