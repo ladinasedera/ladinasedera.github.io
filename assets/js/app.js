@@ -33,7 +33,7 @@ var messages  = {
             "ladina-sedera":"Ladina Sedera",
             "ladina-resume":"Père de trois enfants, Fondateur de <a href='https://fitiavana.mg' target='_blank'>FITIAVANA-MG</a> et Développeur web Full Stack.",
             "about-me-title":"A Propos",
-            "passionate-for-web":"Je suis quelqu'un de passionné par le développement web.<br>Aimez créer des applications Web complexes avec une interface utilisateur riche",
+            "passionate-for-web":"Je suis quelqu'un de passionné par le développement web.<br>J'adore créer des applications Web complexes avec une interface utilisateur riche",
             "principalement"    : "principalement",
             "my-passion"        : "sont ma passion.",
             "my-cursus-locale"  : "Après avoir travailler avec quelques société locale,",
