@@ -13,7 +13,7 @@
     max-width: 800px !important;
     background: var(--vt-c-white);
     padding: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);*/
 }
 
 h1 {
@@ -48,6 +48,3 @@ a, h2, h3,
     }
 }
 
-@media (min-width: 1024px) {
-
-}
