@@ -10,10 +10,9 @@
 }
 
 .container {
-    max-width: 800px !important;
+    max-width: 1024px !important;
     background: var(--vt-c-white);
     padding: 10px;
-    /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);*/
 }
 
 h1 {
@@ -34,7 +33,7 @@ ul:not(.no-style) li::before {
     margin-right: 10px;
 }
 
-a, h2, h3,
+a:not(.no-highlight), h2, h3,
 .green {
     text-decoration: none;
     color: hsla(160, 100%, 37%, 1);
@@ -42,9 +41,79 @@ a, h2, h3,
     padding: 3px;
 }
 
+h2, h3 {
+    padding-left: 0;
+}
+
 @media (hover: hover) {
-    a:hover {
+    a:not(.no-highlight):hover {
         background-color: hsla(160, 100%, 37%, 0.2);
     }
 }
 
+img.logo {
+    position: relative;
+    top: 3px;
+    width: 20px;
+}
+
+img.brand {
+    position: relative;
+    margin: 0 10px;
+    width: 50px;
+    height: auto;
+}
+img.brand:first-child {
+    margin-left: 0;
+}
+
+/* Conteneur du groupe de boutons */
+.btn-group {
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Boutons */
+.btn {
+  border: 1px solid #ddd;
+  background-color: #f8f9fa;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-group-sm {
+  width: 75px;
+  height: 40px;
+}
+
+.flag-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.btn.active {
+  background-color: #0d6efd;
+  color: #fff;
+  border-color: #0d6efd;
+}
+
+.btn.active .flag-icon {
+  filter: brightness(1.2);
+}
+
+.ms-2 {
+  margin-left: 8px;
+}
+
+.btn:hover {
+  background-color: #e9ecef;
+}
+
+.btn.active:hover {
+  background-color: #0b5ed7;
+}
