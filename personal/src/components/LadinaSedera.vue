@@ -270,7 +270,7 @@ const baseUrl = isDev ? '/src' : '';
       </div>
 
       <div class="row mt-2">
-        <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 g-3" style="margin-left: -5rem;">
+        <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 g-3 stacks">
           <div v-for="brand in brands" :key="brand.name" class="col text-center">
             <a :href="`${brand.url}`" :title="`${brand.name}`" target="_blank" class="no-highlight d-block"
                rel="noopener noreferrer">
@@ -298,9 +298,15 @@ const baseUrl = isDev ? '/src' : '';
   text-decoration: none;
 }
 
+.stacks {
+  margin-left: -5rem;
+}
 @media (max-width: 768px) {
   .brand {
     max-width: 60px; /* Ajuster la taille des logos pour les petits écrans */
+  }
+  .stacks {
+    margin-left: unset;
   }
 }
 </style>
