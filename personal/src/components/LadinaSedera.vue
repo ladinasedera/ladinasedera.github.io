@@ -216,16 +216,6 @@ const baseUrl = isDev ? '/src' : '';
 
     <div class="mt-2">
       <h2 class="fw-light">{{ t.expertiseTitle }} <span class="fw-lighter">{{ t.preferredTech }}</span></h2>
-      <div class="row mt-2">
-        <div class="col d-flex">
-          <div v-for="brand in brands" :key="brand.name">
-            <a :href="`${brand.url}`" :title="`${brand.name}`" target="_blank" class="no-highlight"
-               rel="noopener noreferrer">
-              <img :src="`${baseUrl}/assets/icons/${brand.logo}`" class="brand" :alt="`Logo ${brand.name}`"/>
-            </a>
-          </div>
-        </div>
-      </div>
 
       <div class="row mt-2">
         <div class="col-12 col-md-6">
@@ -279,8 +269,38 @@ const baseUrl = isDev ? '/src' : '';
         </div>
       </div>
 
-      <p v-html="t.enthusiasm"></p>
+      <div class="row mt-2">
+        <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 g-3" style="margin-left: -5rem;">
+          <div v-for="brand in brands" :key="brand.name" class="col text-center">
+            <a :href="`${brand.url}`" :title="`${brand.name}`" target="_blank" class="no-highlight d-block"
+               rel="noopener noreferrer">
+              <img :src="`${baseUrl}/assets/icons/${brand.logo}`" class="brand" :alt="`Logo ${brand.name}`"
+                   style="width: 100%; max-width: 80px; height: auto;"/>
+            </a>
+          </div>
+        </div>
+      </div>
+
+         <p v-html="t.enthusiasm"></p>
 
     </div>
   </div>
 </template>
+<style scoped>
+.brand {
+  width: 100%;
+  max-width: 80px; /* Ajustez pour limiter la taille maximale */
+  height: auto;
+  margin: 0 auto; /* Centrez chaque logo */
+}
+
+.no-highlight {
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .brand {
+    max-width: 60px; /* Ajuster la taille des logos pour les petits écrans */
+  }
+}
+</style>
