@@ -10,9 +10,19 @@ const translations = {
     collaboration: '👀<span class="fw-bold"> Open to Collaborating</span> on Innovative Full-Stack Projects.',
     contact: '📫 Contact Me',
     resumeTitle: 'Resume',
-    resumeDescription1: '<span class="fw-bold">Full Stack Developer</span> with 7+ years of experience in designing, developing, and optimizing high-performance, user-centric web applications and APIs. <span class="fw-medium">Specializing in modern PHP and JavaScript frameworks.</span>',
-    resumeDescription2: '<span class="fw-bold">My focus</span> is on building and delivering scalable, efficient, maintainable, and secure applications <span class="fw-medium">that meet client needs and business goals.</span>',
-    resumeDescription3: 'I am <span class="fw-medium">skilled in writing clean, modular code,</span> with strong expertise in object-oriented programming, SQL/NoSQL databases, and best practices for testing and debugging with a focus on maintainability to ensuring robust, reliable, and scalable applications.',
+    resumeDescription: `<h5 class="fw-bold">Full-Stack Developer | 100% Quality Guarantee</h5>
+
+<p>Expert in complete web/mobile & API development lifecycle from concept to deployment.<br>
+I deliver high-performance applications using PHP & JS mostly with Laravel, Vue.js, WordPress & PrestaShop that drive real business results.</p>
+
+<h5 class="fw-bold">What I bring to your project:</h5>
+<ul>
+    <li>Proven track record in dynamic web applications</li>
+    <li>Object-oriented programming mastery with clean, scalable code</li>
+    <li>Full lifecycle expertise - coding, testing, debugging, maintenance</li>
+    <li>Client-first approach ensuring satisfaction and long-term success</li>
+</ul>
+`,
     expertiseTitle: 'Technical Expertise',
     preferredTech: '| Preferred Technologies',
     enthusiasm: '🤩 <span class="fw-bolder ps-2">Enthusiastic </span> about PHP, JavaScript/TypeScript'
@@ -25,9 +35,18 @@ const translations = {
     collaboration: '👀 <span class="fw-bold">Ouvert à collaborer</span> sur des projets Full-Stack innovants.',
     contact: '📫 Contactez-moi',
     resumeTitle: 'Résumé',
-    resumeDescription1: "<span class='fw-bold'>Développeur Full Stack</span> avec plus de 7 ans d'expérience dans la conception, le développement et l'optimisation d'applications web performantes, centrées sur l'utilisateur et des API.<span class='fw-medium'> Spécialisé dans les frameworks modernes PHP et JavaScript.</span>",
-    resumeDescription2: "<span class='fw-bold'>Mon objectif</span> est de créer et de livrer des applications évolutives, efficaces, maintenables et sécurisées <span class='fw-medium'>qui répondent aux besoins des clients et aux objectifs commerciaux.</span>",
-    resumeDescription3: "Je suis expérimenté dans <span class='fw-medium'>l'écriture de code propre et modulaire,</span> avec une forte expertise en programmation orientée objet, bases de données SQL/NoSQL et meilleures pratiques pour les tests et le débogage, avec un focus sur la maintenabilité pour garantir des applications robustes, fiables et évolutives.",
+    resumeDescription: `<h5 class="fw-bold">Développeur Full-Stack | Garantie Qualité 100 %</h2>
+
+<p>Expert dans le développement complet d'applications web, mobiles et d'API, de la conception jusqu’au déploiement.<br>
+Je conçois des applications performantes avec PHP & JavaScript, principalement avec Laravel, Vue.js, WordPress et PrestaShop, pour générer des résultats concrets pour votre activité.</p>
+
+<h5 class="fw-bold">Ce que j’apporte à vos projets :</h3>
+<ul>
+    <li>Expérience confirmée dans le développement d'applications web dynamiques</li>
+    <li>Maîtrise de la programmation orientée objet et d’un code propre, structuré et évolutif</li>
+    <li>Compétences sur l’ensemble du cycle de développement : codage, tests, débogage, maintenance</li>
+    <li>Approche orientée client, avec pour objectif la satisfaction et le succès sur le long terme</li>
+</ul>`,
     expertiseTitle: 'Compétences Techniques',
     preferredTech: '| Technologies Préférées',
     enthusiasm: '🤩 <span class="fw-bolder ps-2">Passionné </span> par PHP, JavaScript/TypeScript'
@@ -188,9 +207,10 @@ const baseUrl = isDev ? '/src' : '';
         <p>
           <span class="fw-bold">{{ t.contact }}</span>:
 
-          <a href="https://www.linkedin.com/in/ladina-sedera" target="_blank"> <img src="@/assets/icons/linkedin.svg"
-                                                                                    class="logo" alt="Logo LinkedIn"
-                                                                                    srcset="@/assets/icons/linkedin.svg">
+          <a href="https://www.linkedin.com/in/ladina-sedera" target="_blank">
+            <img src="@/assets/icons/linkedin.svg"
+                 class="logo" alt="Logo LinkedIn"
+                 srcset="@/assets/icons/linkedin.svg">
             LinkedIn </a> |
           <a href="mailto:ladina.sedera@gmail.com"><img src="@/assets/icons/whatsapp.svg" class="logo" alt="Logo Gmail"
                                                         srcset="@/assets/icons/gmail.svg">
@@ -206,11 +226,7 @@ const baseUrl = isDev ? '/src' : '';
     <div class="my-2">
       <h2 class="fw-light px-0">{{ t.resumeTitle }}</h2>
       <div>
-        <p v-html="t.resumeDescription1"></p>
-
-        <p class="mt-2" v-html="t.resumeDescription2"></p>
-
-        <p class="mt-2" v-html="t.resumeDescription3"></p>
+        <p v-html="t.resumeDescription"></p>
       </div>
     </div>
 
@@ -281,7 +297,7 @@ const baseUrl = isDev ? '/src' : '';
         </div>
       </div>
 
-         <p v-html="t.enthusiasm"></p>
+      <p v-html="t.enthusiasm"></p>
 
     </div>
   </div>
@@ -301,10 +317,12 @@ const baseUrl = isDev ? '/src' : '';
 .stacks {
   margin-left: -5rem;
 }
+
 @media (max-width: 768px) {
   .brand {
     max-width: 60px; /* Ajuster la taille des logos pour les petits écrans */
   }
+
   .stacks {
     margin-left: unset;
   }
