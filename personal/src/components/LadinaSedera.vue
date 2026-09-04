@@ -4,10 +4,11 @@ import { ref, computed, onMounted, watchEffect, watch } from 'vue';
 const currentYear = new Date().getFullYear();
 
 /* ---------------------------------------------------------------- links */
+const WHATSAPP_NUMBER = '261341110472';
+
 const LINKS = {
   linkedin: 'https://www.linkedin.com/in/ladina-sedera',
   upwork: 'https://www.upwork.com/freelancers/~0155280b4d108e05b9',
-  whatsapp: 'https://wa.me/261341110472',
   email: 'mailto:ladina.sedera@gmail.com',
   github: 'https://github.com/ladinasedera',
 };
@@ -68,6 +69,9 @@ const translations = {
     contact_email: 'Email', contact_email_sub: 'ladina.sedera@gmail.com',
     contact_recommended: 'Fastest',
 
+    wa_default: "Hi Ladina, I found your website and I'd like to talk about a web project.",
+    wa_services: "Hi Ladina, I found your website. I have a project in mind but I'm not sure which service fits — could you help me figure it out?",
+
     footer_name: 'Ladina Sedera — Full Stack Web Developer',
     footer_tagline: 'Freelance • Laravel, Vue.js, PHP • Remote worldwide',
     theme_label: 'Theme',
@@ -111,6 +115,9 @@ const translations = {
     contact_email: 'Email', contact_email_sub: 'ladina.sedera@gmail.com',
     contact_recommended: 'Le plus rapide',
 
+    wa_default: "Bonjour Ladina, je viens de voir votre site et j'aimerais discuter d'un projet web.",
+    wa_services: "Bonjour Ladina, je viens de voir votre site. J'ai un projet en tête mais je ne sais pas quelle prestation correspond — pouvez-vous m'aider ?",
+
     footer_name: 'Ladina Sedera — Développeur Web Full Stack',
     footer_tagline: 'Freelance • Laravel, Vue.js, PHP • À distance, partout',
     theme_label: 'Thème',
@@ -120,6 +127,12 @@ const translations = {
 
 const selectedLanguage = ref('en');
 const t = computed(() => translations[selectedLanguage.value]);
+
+/* Pre-fills the WhatsApp message so the visitor never faces an empty chat box.
+   `key` picks the wording that matches the button they clicked. */
+function whatsappLink(key = 'wa_default') {
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(t.value[key])}`;
+}
 
 function setMeta(selector, value) {
   document.querySelector(selector)?.setAttribute('content', value);
@@ -228,7 +241,7 @@ function scrollTo(id) {
         <button class="ls-theme-btn" @click="cycleTheme" :title="t.theme_label" :aria-label="t.theme_label">
           {{ THEME_ICONS[theme] }}
         </button>
-        <a class="ls-btn ls-btn--primary ls-btn--sm ls-nav__cta" :href="LINKS.whatsapp" target="_blank" rel="noopener">
+        <a class="ls-btn ls-btn--primary ls-btn--sm ls-nav__cta" :href="whatsappLink()" target="_blank" rel="noopener">
           {{ t.nav_cta }}
         </a>
       </div>
@@ -243,7 +256,7 @@ function scrollTo(id) {
             <h1 class="ls-hero__title">{{ t.hero_title }}</h1>
             <p class="ls-hero__sub">{{ t.hero_sub }}</p>
             <div class="ls-hero__actions">
-              <a class="ls-btn ls-btn--primary ls-btn--lg" :href="LINKS.whatsapp" target="_blank" rel="noopener">
+              <a class="ls-btn ls-btn--primary ls-btn--lg" :href="whatsappLink()" target="_blank" rel="noopener">
                 <img :src="`${iconBase}/whatsapp.svg`" alt="" width="20" height="20" class="ls-btn__icon" />
                 {{ t.hero_cta }}
               </a>
@@ -318,7 +331,7 @@ function scrollTo(id) {
           <div class="ls-services__cta">
             <p class="ls-services__cta-text">{{ t.services_cta_text }}</p>
             <div class="ls-services__cta-actions">
-              <a class="ls-btn ls-btn--primary" :href="LINKS.whatsapp" target="_blank" rel="noopener">
+              <a class="ls-btn ls-btn--primary" :href="whatsappLink('wa_services')" target="_blank" rel="noopener">
                 {{ t.services_cta }}
               </a>
               <a class="ls-btn ls-btn--ghost" :href="LINKS.linkedin" target="_blank" rel="noopener">
@@ -356,7 +369,7 @@ function scrollTo(id) {
             <p class="ls-contact__sub">{{ t.contact_sub }}</p>
 
             <div class="ls-contact__links">
-              <a :href="LINKS.whatsapp" target="_blank" rel="noopener"
+              <a :href="whatsappLink()" target="_blank" rel="noopener"
                  class="ls-contact-card ls-contact-card--accent">
                 <span class="ls-contact-card__badge">{{ t.contact_recommended }}</span>
                 <img :src="`${iconBase}/whatsapp.svg`" alt="" width="28" height="28" class="ls-contact-card__icon" />
@@ -395,7 +408,7 @@ function scrollTo(id) {
     </footer>
 
     <div class="ls-sticky-cta">
-      <a class="ls-sticky-cta__btn ls-sticky-cta__btn--accent" :href="LINKS.whatsapp" target="_blank" rel="noopener">
+      <a class="ls-sticky-cta__btn ls-sticky-cta__btn--accent" :href="whatsappLink()" target="_blank" rel="noopener">
         <img :src="`${iconBase}/whatsapp.svg`" alt="" width="18" height="18" /> {{ t.sticky_cta }}
       </a>
       <a class="ls-sticky-cta__btn" :href="LINKS.linkedin" target="_blank" rel="noopener">
