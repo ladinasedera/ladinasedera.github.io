@@ -40,6 +40,7 @@ function localiseHead(html, lang) {
   html = html.replace(/(<link rel="canonical" href=")[^"]*(")/, `$1${url}$2`)
 
   html = setMeta(html, 'name="description"', t.meta_desc)
+  html = setMeta(html, 'name="keywords"', t.meta_keywords)
   html = setMeta(html, 'property="og:title"', t.meta_title)
   html = setMeta(html, 'property="og:description"', t.meta_desc)
   html = setMeta(html, 'property="og:url"', url)

@@ -88,7 +88,9 @@ const brands = [
   { name: 'Flutter', logo: 'flutter.svg', url: 'https://flutter.dev' },
   { name: 'Tailwind', logo: 'tailwind.svg', url: 'https://tailwindcss.com' },
   { name: 'Bootstrap', logo: 'bootstrap.svg', url: 'https://getbootstrap.com' },
+  { name: 'Git', logo: 'git.svg', url: 'https://git-scm.com' },
   { name: 'GitHub', logo: 'github.svg', url: LINKS.github },
+  { name: 'GitLab', logo: 'gitlab.svg', url: 'https://gitlab.com' },
   { name: 'Apache', logo: 'apache.svg', url: 'https://apache.org' },
 ];
 
@@ -98,7 +100,9 @@ const services = computed(() => [
   { icon: '◆', title: t.value.service_1_title, text: t.value.service_1 },
   { icon: '⇄', title: t.value.service_2_title, text: t.value.service_2 },
   { icon: '▲', title: t.value.service_3_title, text: t.value.service_3 },
-  { icon: '⚙', title: t.value.service_4_title, text: t.value.service_4 },
+  { icon: '▢', title: t.value.service_4_title, text: t.value.service_4 },
+  { icon: '⚙', title: t.value.service_5_title, text: t.value.service_5 },
+  { icon: '◎', title: t.value.service_6_title, text: t.value.service_6 },
 ]);
 
 function scrollTo(id) {
@@ -185,6 +189,7 @@ function scrollTo(id) {
           <div class="ls-section-line" aria-hidden="true"></div>
         </div>
         <p class="ls-about__text">{{ t.about_text }}</p>
+        <p class="ls-about__meta">{{ t.about_extra }}</p>
         <div class="ls-values">
           <article class="ls-value-card">
             <div class="ls-value-card__icon" aria-hidden="true">✦</div>
@@ -249,6 +254,10 @@ function scrollTo(id) {
               <span class="ls-brand__name">{{ brand.name }}</span>
             </a>
           </div>
+          <p class="ls-stack__more">
+            <span class="ls-stack__more-label">{{ t.stack_more_label }}</span>
+            {{ t.stack_more }}
+          </p>
         </div>
       </section>
 
@@ -291,6 +300,7 @@ function scrollTo(id) {
     <footer class="ls-footer">
       <span class="ls-footer__name">© {{ currentYear }} {{ t.footer_name }}</span>
       <span class="ls-footer__tagline">{{ t.footer_tagline }}</span>
+      <span class="ls-footer__tagline">{{ t.footer_location }}</span>
       <span class="ls-footer__links">
         <a :href="LINKS.linkedin" target="_blank" rel="noopener">LinkedIn</a>
         <a :href="LINKS.upwork" target="_blank" rel="noopener">Upwork</a>
@@ -390,7 +400,8 @@ function scrollTo(id) {
 .ls-section-line { flex: 1; height: 1px; background: var(--ls-border); }
 
 .ls-about { padding: 72px 24px; background: var(--ls-bg); }
-.ls-about__text { font-size: 1.05rem; line-height: 1.8; color: var(--ls-muted); max-width: 720px; margin-bottom: 40px; font-family: Arial, sans-serif; }
+.ls-about__text { font-size: 1.05rem; line-height: 1.8; color: var(--ls-muted); max-width: 720px; margin-bottom: 16px; font-family: Arial, sans-serif; }
+.ls-about__meta { font-size: 0.86rem; color: var(--ls-muted); font-family: Arial, sans-serif; letter-spacing: 0.01em; padding-left: 12px; border-left: 3px solid var(--ls-accent); margin-bottom: 40px; }
 .ls-values { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .ls-value-card { padding: 28px; border: 1px solid var(--ls-border); border-radius: var(--ls-radius); background: var(--ls-card-bg); transition: all 0.25s; }
 .ls-value-card:hover { border-color: var(--ls-accent); box-shadow: 0 0 0 4px var(--ls-accent-light); transform: translateY(-3px); }
@@ -399,7 +410,7 @@ function scrollTo(id) {
 .ls-value-card__text { font-size: 0.9rem; color: var(--ls-muted); line-height: 1.6; font-family: Arial, sans-serif; }
 
 .ls-services { background: var(--ls-bg2); padding: 72px 0; border-top: 1px solid var(--ls-border); }
-.ls-services__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.ls-services__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .ls-service-card { padding: 26px 22px; background: var(--ls-card-bg); border: 1px solid var(--ls-border); border-radius: var(--ls-radius); transition: all 0.25s; }
 .ls-service-card:hover { border-color: var(--ls-accent); transform: translateY(-3px); box-shadow: var(--ls-shadow); }
 .ls-service-card__icon { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; margin-bottom: 14px; border-radius: 10px; background: var(--ls-accent-light); color: var(--ls-accent); font-size: 1.1rem; }
@@ -414,6 +425,8 @@ function scrollTo(id) {
 .ls-brand { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 16px 8px; border-radius: var(--ls-radius); border: 1px solid transparent; text-decoration: none; transition: all 0.2s; }
 .ls-brand:hover { border-color: var(--ls-border); background: var(--ls-card-bg); box-shadow: var(--ls-shadow); transform: translateY(-2px); }
 .ls-brand__img { width: 48px; height: 48px; object-fit: contain; }
+.ls-stack__more { margin-top: 28px; font-family: Arial, sans-serif; font-size: 0.82rem; line-height: 1.9; color: var(--ls-muted); }
+.ls-stack__more-label { display: inline-block; margin-right: 8px; padding: 3px 10px; border-radius: 100px; background: var(--ls-accent-light); color: var(--ls-accent); font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; }
 .ls-brand__name { font-size: 0.72rem; color: var(--ls-muted); text-align: center; font-family: Arial, sans-serif; font-weight: 500; }
 
 .ls-contact { padding: 72px 0 96px; background: var(--ls-bg2); }
