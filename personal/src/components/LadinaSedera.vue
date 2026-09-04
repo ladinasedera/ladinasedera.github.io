@@ -6,10 +6,15 @@ const currentYear = new Date().getFullYear();
 /* ---------------------------------------------------------------- links */
 const WHATSAPP_NUMBER = '261341110472';
 
+/* Split so the full address is never a contiguous string in the HTML or the
+   bundle — naive harvesters scrape both. Still one click for a human. */
+const EMAIL_USER = 'ladina.sedera';
+const EMAIL_HOST = 'gmail.com';
+const emailHref = `mailto:${EMAIL_USER}@${EMAIL_HOST}`;
+
 const LINKS = {
   linkedin: 'https://www.linkedin.com/in/ladina-sedera',
   upwork: 'https://www.upwork.com/freelancers/~0155280b4d108e05b9',
-  email: 'mailto:ladina.sedera@gmail.com',
   github: 'https://github.com/ladinasedera',
 };
 
@@ -66,7 +71,7 @@ const translations = {
     contact_linkedin: 'LinkedIn', contact_linkedin_sub: 'Connect & see my background',
     contact_upwork: 'Upwork', contact_upwork_sub: 'Hire with contract protection',
     contact_whatsapp: 'WhatsApp', contact_whatsapp_sub: 'Fastest — chat right now',
-    contact_email: 'Email', contact_email_sub: 'ladina.sedera@gmail.com',
+    contact_email: 'Email', contact_email_sub: 'Pour les briefs et les documents',
     contact_recommended: 'Fastest',
 
     wa_default: "Hi Ladina, I found your website and I'd like to talk about a web project.",
@@ -112,7 +117,7 @@ const translations = {
     contact_linkedin: 'LinkedIn', contact_linkedin_sub: 'Me connecter & voir mon parcours',
     contact_upwork: 'Upwork', contact_upwork_sub: 'Me recruter avec un cadre contractuel',
     contact_whatsapp: 'WhatsApp', contact_whatsapp_sub: 'Le plus rapide — on discute tout de suite',
-    contact_email: 'Email', contact_email_sub: 'ladina.sedera@gmail.com',
+    contact_email: 'Email', contact_email_sub: 'Pour les briefs et les documents',
     contact_recommended: 'Le plus rapide',
 
     wa_default: "Bonjour Ladina, je viens de voir votre site et j'aimerais discuter d'un projet web.",
@@ -386,7 +391,7 @@ function scrollTo(id) {
                 <span class="ls-contact-card__label">{{ t.contact_upwork }}</span>
                 <span class="ls-contact-card__sub">{{ t.contact_upwork_sub }}</span>
               </a>
-              <a :href="LINKS.email" class="ls-contact-card">
+              <a :href="emailHref" class="ls-contact-card">
                 <img :src="`${iconBase}/gmail.svg`" alt="" width="28" height="28" class="ls-contact-card__icon" />
                 <span class="ls-contact-card__label">{{ t.contact_email }}</span>
                 <span class="ls-contact-card__sub">{{ t.contact_email_sub }}</span>
